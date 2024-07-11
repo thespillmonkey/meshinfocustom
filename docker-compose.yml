@@ -38,5 +38,5 @@ services:
       - caddy
       - postgres
 
-    volumes:
+volumes:
       - meshinfo_output
