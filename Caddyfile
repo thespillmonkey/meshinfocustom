@@ -6,7 +6,7 @@
 	root * /srv
 	encode gzip
 	file_server
-	tls
+	tls internal
 	log {
 		output file /var/log/caddy.log
 	}
