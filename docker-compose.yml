@@ -7,7 +7,7 @@ services:
     volumes:
       - ./caddy/data:/data/caddy
       - ./Caddyfile:/etc/caddy/Caddyfile
-      - meshinfo_output/static-html:/srv
+      - static-html:/srv
       - ./public/images:/srv/images
     environment:
       - CADDY_AGREE=true
@@ -25,6 +25,7 @@ services:
     image: ghcr.io/meshaddicts/meshinfo:latest
     volumes:
       - meshinfo_output:/app/output
+      - static-html:/app/output/static-html
       - ./config.json:/app/config.json
       
     environment:
@@ -36,3 +37,5 @@ services:
 
 volumes:
   meshinfo_output:
+  static-html:
+  
