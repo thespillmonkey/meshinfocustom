@@ -39,4 +39,4 @@ services:
       - postgres
 
 volumes:
-  - meshinfo_output
+  meshinfo_output:
