@@ -1,14 +1,14 @@
 {
   "broker": {
     "enabled": true,
-    "host": "mqtt.meshtastic.org",
+    "host": "192.168.42.178",
     "port": 1883,
     "client_id_prefix": "meshinfo-dev",
     "topics": [
-      "msh/US/CA/+/2/json/#"
+      "msh/US/GAFnet/+/2/json/#"
     ],
-    "username": "meshdev",
-    "password": "large4cats"
+    "username": "mqtt",
+    "password": "mqtt"
   },
   "paths": {
     "data": "output/data",
