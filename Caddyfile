@@ -3,10 +3,10 @@
 }
 
 http:// {
+	respond "No redirect"
 	root * /srv
 	encode gzip
 	file_server
-	tls internal
 	log {
 		output file /var/log/caddy.log
 	}
