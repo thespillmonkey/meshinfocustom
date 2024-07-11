@@ -2,7 +2,7 @@
 	debug
 }
 
-http://192.168.42.178:80 {
+http:// {
 	root * /srv
 	encode gzip
 	file_server
