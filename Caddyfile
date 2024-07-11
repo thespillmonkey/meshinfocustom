@@ -2,10 +2,11 @@
 	debug
 }
 
-http://192.168.42.178 {
+192.168.42.178:443 {
 	root * /srv
 	encode gzip
 	file_server
+	tls internal
 	log {
 		output file /var/log/caddy.log
 	}
