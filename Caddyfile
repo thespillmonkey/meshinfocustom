@@ -2,7 +2,7 @@
 	debug
 }
 
-svm.meshinfo.network, svm1.meshinfo.network {
+192.168.42.178 {
 	root * /srv
 	encode gzip
 	file_server
