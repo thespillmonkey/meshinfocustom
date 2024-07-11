@@ -7,7 +7,7 @@ services:
     volumes:
       - ./caddy/data:/data/caddy
       - ./Caddyfile:/etc/caddy/Caddyfile
-      - ./output/static-html:/srv
+      - meshinfo_output/static-html:/srv
       - ./public/images:/srv/images
     environment:
       - CADDY_AGREE=true
@@ -29,10 +29,6 @@ services:
       
     environment:
       - PYTHONUNBUFFERED=1
-      - MQTT_HOST=192.168.42.178
-      - MQTT_PORT=1883
-      - MQTT_USERNAME=mqtt
-      - MQTT_PASSWORD=mqtt
     restart: always
     depends_on:
       - caddy
