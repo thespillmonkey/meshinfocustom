@@ -2,8 +2,8 @@ services:
   caddy:
     image: caddy:latest
     ports:
-      - 80:80
-      - 443:443
+      - 888:80
+      - 444:443
     volumes:
       - ./caddy/data:/data/caddy
       - ./Caddyfile:/etc/caddy/Caddyfile
@@ -21,16 +21,6 @@ services:
       - POSTGRES_PASSWORD=password
     restart: always
 
-  mqtt:
-    container_name: mqtt
-    image: eclipse-mosquitto:latest
-    ports:
-      - 1883:1883
-    volumes:
-      - ./mosquitto/data:/mosquitto/data:rw
-      - ./mosquitto/config:/mosquitto/config:rw
-    restart: always
-
   meshinfo:
     image: ghcr.io/meshaddicts/meshinfo:latest
     volumes:
@@ -38,12 +28,11 @@ services:
       - ./output:/app/output
     environment:
       - PYTHONUNBUFFERED=1
-      - MQTT_HOST=mqtt
+      - MQTT_HOST=192.168.42.178
       - MQTT_PORT=1883
-      - MQTT_USERNAME=meshinfo
-      - MQTT_PASSWORD=m3sht4st1c
+      - MQTT_USERNAME=mqtt
+      - MQTT_PASSWORD=mqtt
     restart: always
     depends_on:
       - caddy
       - postgres
-      - mqtt
