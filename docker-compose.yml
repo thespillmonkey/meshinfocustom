@@ -26,6 +26,7 @@ services:
     volumes:
       - meshinfo_output:/app/output
       - ./config.json:/app/config.json
+      
     environment:
       - PYTHONUNBUFFERED=1
       - MQTT_HOST=192.168.42.178
@@ -36,3 +37,6 @@ services:
     depends_on:
       - caddy
       - postgres
+
+    volumes:
+      - meshinfo_output
