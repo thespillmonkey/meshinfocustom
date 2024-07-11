@@ -4,7 +4,6 @@
 }
 
 http:// {
-	respond "No redirect"
 	root * /srv
 	encode gzip
 	file_server
